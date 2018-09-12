@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+<div class="col-xs-12 header">
+<div class="form-group">
+<div class="col-xs-12"> &#160 </div>
+<div class="col-xs-8">
+<img src="weblogo.fw.png" style="width:389px;height:72px;">
+</div>
+<div class="col-xs-2">
+<button class="btn btn-info" id="b1">Create Website</button>
+<button class="btn btn-info" type="button" id="b3">About</button>
+</div>
+</div>
+</div>
+<div class="col-xs-2 space">
+</div>
+<div class="col-xs-8 content">
+
+<div id="create">
+<h2 class="cenTex">Create Page</h2>
+<div class="col-xs-12"> &#160 </div>
+<div class="form-group">
+<div class="col-xs-12 cenTex"><button type="button" class="btn btn-primary" id="btnCan">Create</button></div>
+<div class="col-xs-12"> &#160 </div>
+<div id="clubIMG" class="col-xs-12"> <img src=""></img> </div>
+</div>
+</div>
+
+<div id="about">
+<h2 class="cenTex">About</h2>
+<div class="col-xs-12"> &#160 </div>
+<b class="vermutTex">Webdosom is a website developer tool that can be used by anyone to develop a website. Just click create to make your website now!</b>
+</div>
+
+</div> 
+</body>
+<style>
+.pic {
+   width:150px;
+   height:150px;
+}
+#clubIMG {
+   width: 150px;
+   height: 150px;
+}
+.cenTex {
+   text-align: center;
+}
+.vermutTex {
+   text-align: center;    
+}
+.cenRi {
+   float: right;
+}
+.header {
+   background-color: royalblue;
+   height: 140px;
+}
+.content {
+    background-color: silver;
+    height: 100vh;
+}
+.space {
+    background-color: white;
+}
+.footer {
+    background-color: black;
+    height: 10px;
+}
+</style>
+<script>
+$("#create").show();
+$("#sponser").hide();
+$("#about").hide();
+$('#btnCan').click(function() {
+  window.location='Acreate.HTML';
+});
+$(window).on('load',function(){
+	
+});
+$('#b1').click(function() {
+$("#create").show();
+$("#sponser").hide();
+$("#about").hide();
+});
+$('#b3').click(function() {
+$("#create").hide();
+$("#sponser").hide();
+$("#about").show();
+});
+</script>
+</html>
+
+

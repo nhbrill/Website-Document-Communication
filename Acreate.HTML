@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.1.0/knockout-min.js"></script>
+
+  <script src="https://rawgit.com/adrotec/knockout-file-bindings/master/knockout-file-bindings.js"></script>
+
+
+</head>
+<body>
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Create Website</h4>
+        </div>
+
+        <div class="modal-body">
+<form>
+          <div class="col-xs-12"> &#160 </div>
+<div class="form-group">
+<label class="control-label col-xs-4">Website Name</label><div class="col-md-6"><input class="form-control" id="titleUser" required /></div>
+</div>
+<div class="col-xs-12"> &#160 </div>
+<div class="form-group">
+<label class="control-label col-xs-4">Platform</label><div class="col-xs-6">
+<button class="btn btn-info btnSize" type="button" id="p1">Default</button>
+<button class="btn btn-info btnSize" type="button" id="p2">Regular</button>
+<button class="btn btn-info btnSize" type="button" id="p3">Original</button>
+<button class="btn btn-info btnSize" type="button" id="p4">Classic</button>
+<button class="btn btn-info btnSize" type="button" id="p5">Normal</button>
+<button class="btn btn-info btnSize" type="button" id="p6">Standard</button>
+</div>
+<div class="col-xs-12"> &#160 </div>
+<div class="form-group">
+<label class="control-label col-xs-4">Pick Header Color</label><div class="col-xs-6"><input type="color" id="colorOne" value="#ffffff" class="form-control" required /></div>
+</div>
+<div class="col-xs-12"> &#160 </div>
+<div class="form-group">
+<label class="control-label col-xs-4">Pick Content Color</label><div class="col-xs-6"><input type="color" id="colorTwo" value="#ffffff" class="form-control" required /></div>
+</div>
+<div class="col-xs-12"> &#160 </div>
+<div class="form-group">
+<label class="control-label col-xs-4">Pick Margin Color</label><div class="col-xs-6"><input type="color" id="colorThree" value="#ffffff" class="form-control" /></div>
+</div>
+<div class="col-xs-12"> &#160 </div>
+<div class="form-group">
+<label class="control-label col-xs-4">Font</label><div class="col-xs-6">
+<select class="form-control" id="font">
+<option value="arial">Text</option>
+<option value="impact">Letter</option>
+<option value="times new roman">Word</option>
+<option value="georgia">Writer</option>
+<option value="brush script std">Signature</option>
+<option value="copperplate gothic light">Typer</option>
+<option value="comic sans">Note</option>
+</select>
+</div>
+</div>
+<div class="col-xs-12"> &#160 </div>
+<div class="form-group">
+<label class="control-label col-xs-4">Font Color</label><div class="col-xs-6"><input id="colorFour" value="#000000" type="color" class="form-control" required /></div>
+</div>
+<div class="col-xs-12"> &#160 </div>
+<div class="form-group">
+<div class="col-xs-12">
+	<button type="submit" class="btn btn-success" type="button" onclick="save()" data-dismiss="modal">Create</button> &#160
+        <button type="reset" class="btn btn-warning">Reset</button> &#160
+ 	<button type="button" class="btn btn-danger" id="btnCancel">Cancel</button>
+</div>
+</div>
+</form>
+<div class="col-xs-12"> &#160 </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        </div>
+    </div>
+  </div>
+</div>
+
+<!--Start of platform one-->
+<div id="platformO">
+<div class="col-xs-12 header"><h1 class="headTitle" id="titleO"></h1></div>
+<div class="col-xs-2 header"></div>
+<div class="col-xs-8 info"></div>
+<div class="col-xs-2 header"></div>
+<div class="col-xs-2 space"></div>
+<div class="col-xs-8 content">
+<div id="textUser">
+<textarea style="width:100%;" rows="20" id="text"></textarea>
+<button class="btn btn-primary" id="textSave">Save</button>
+</div>
+<div id="finalText">
+<p class="headTitle" id="savedText"></p>
+</div>
+<div data-bind="filedDrag: fileData">
+            
+<img data-bind="attr: { src: fileData().dataURL }, visible: fileData().dataURL">
+        
+<div class="col-md-6">
+            
+<input type="file" class="btn btn-primary" style="width:115px" data-bind="fileInput: fileData">
+  
+</div>
+
+</div>
+
+</div>
+<div class="col-xs-2 space"></div>
+</div>
+
+<!--Start of platform two-->
+<div id="platformT">
+<div class="col-xs-12 header"><h1 id="titleT" class="headTitle"></h1></div>
+<div class="col-xs-2 space"></div>
+<div class="col-xs-8 content">
+<div id="textUserT">
+<textarea style="width:100%;" rows="20" id="textT"></textarea>
+<button class="btn btn-primary" id="textSaveT">Save</button>
+</div>
+<div id="finalTextT">
+<p class="headTitle" id="savedTextT"></p>
+</div>
+<div data-bind="filedDrag: fileData">
+            
+<img data-bind="attr: { src: fileData().dataURL }, visible: fileData().dataURL">
+        
+<div class="col-md-6">
+            
+<input type="file" class="btn btn-primary" style="width:115px" data-bind="fileInput: fileData">
+  
+</div>
+
+</div>
+
+</div>
+<div class="col-xs-2 space"></div>
+</div>
+
+<!--Start of Platform three-->
+<div id="platformH">
+<div class="col-xs-2 space"></div>
+<div class="col-xs-10 header"><h1 class="headTitle" id="titleH"></h1></div>
+<div class="col-xs-10 content">
+<div id="textUserH">
+<textarea style="width:100%;" rows="20" id="textH"></textarea>
+<button class="btn btn-primary" id="textSaveH">Save</button>
+</div>
+<div id="finalTextH">
+<p class="headTitle" id="savedTextH"></p>
+</div>
+<div data-bind="filedDrag: fileData">
+            
+<img data-bind="attr: { src: fileData().dataURL }, visible: fileData().dataURL">
+        
+<div class="col-md-6">
+            
+<input type="file" class="btn btn-primary" style="width:115px" data-bind="fileInput: fileData">
+  
+</div>
+
+</div>
+
+</div>
+</div>
+
+<!--Start of Platform four-->
+<div id="platformF">
+<div class="col-xs-12 header"><h1 class="headTitle" id="titleF"></h1></div>
+<div class="col-xs-1 spacealt"></div>
+<div class="col-xs-10 content">
+<div id="textUserF">
+<textarea style="width:100%;" rows="20" id="textF"></textarea>
+<button class="btn btn-primary" id="textSaveF">Save</button>
+</div>
+<div id="finalTextF">
+<p class="headTitle" id="savedTextF"></p>
+</div>
+<div data-bind="filedDrag: fileData">
+            
+<img data-bind="attr: { src: fileData().dataURL }, visible: fileData().dataURL">
+        
+<div class="col-md-6">
+            
+<input type="file" class="btn btn-primary" style="width:115px" data-bind="fileInput: fileData">
+  
+</div>
+
+</div>
+
+</div>
+<div class="col-xs-1 spacealt"></div>
+<div class="col-xs-12 header"></div>
+</div>
+
+<!--Start of Platform five-->
+<div id="platformV">
+<div class="col-xs-12 header"><h1 class="headTitle" id="titleV"></h1></div>
+<div class="col-xs-12 content">
+<div id="textUserV">
+<textarea style="width:100%;" rows="20" id="textV"></textarea>
+<button class="btn btn-primary" id="textSaveV">Save</button>
+</div>
+<div id="finalTextV">
+<p class="headTitle" id="savedTextV"></p>
+</div>
+<div data-bind="filedDrag: fileData">
+            
+<img data-bind="attr: { src: fileData().dataURL }, visible: fileData().dataURL">
+        
+<div class="col-xs-6">
+            
+<input type="file" class="btn btn-primary" style="width:115px" data-bind="fileInput: fileData">
+  
+</div>
+
+</div>
+
+</div>
+</div>
+
+<!--Start of Platform six-->
+<div id="platformS">
+<div class="col-xs-2 header"><h1 class="headTitle" id="titleS"></h1></div>
+<div class="col-xs-10 content">
+<div id="textUserS">
+<textarea style="width:100%;" rows="20" id="textS"></textarea>
+<button class="btn btn-primary" id="textSaveS">Save</button>
+</div>
+<div id="finalTextS">
+<p class="headTitle" id="savedTextS"></p>
+</div>
+<div data-bind="filedDrag: fileData">
+            
+<img data-bind="attr: { src: fileData().dataURL }, visible: fileData().dataURL">
+        
+<div class="col-xs-6">
+            
+<input type="file" class="btn btn-primary" style="width:115px" data-bind="fileInput: fileData">
+  
+</div>
+
+</div>
+
+</div>
+</div>
+
+</body>
+<style>
+.btnSize {
+   width:100px;
+}
+.info {
+   height: 100px;
+}
+.header {
+   height: 100px;
+}
+.space {
+    height: 100vh;
+}
+.content {
+    height: 100vh;
+}
+.footer {
+    height: 10px;
+}
+.spacealt {
+    height: 100vh;
+}
+.divO {
+
+}
+.divT {
+
+}
+.divH {
+
+}
+.headTitle {
+
+}
+.info {
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    padding: 20px;
+}
+</style>
+<script>
+var viewModel = {};
+viewModel.fileData = ko.observable({
+  dataURL: ko.observable()
+});
+ko.applyBindings(viewModel);
+$("#platformO").show();
+$("#platformT").hide();
+$("#platformH").hide();
+$("#platformF").hide();
+$("#platformV").hide();
+$("#platformS").hide();
+$("#p1").click(function(){
+    $("#platformO").show();
+    $("#platformT").hide();
+    $("#platformH").hide();
+    $("#platformF").hide();
+    $("#platformV").hide();
+    $("#platformS").hide();
+});
+$("#p2").click(function(){
+    $("#platformT").show();
+    $("#platformO").hide();
+    $("#platformH").hide();
+    $("#platformF").hide();
+    $("#platformV").hide();
+    $("#platformS").hide();
+});
+$("#p3").click(function(){
+    $("#platformH").show();
+    $("#platformO").hide();
+    $("#platformT").hide();
+    $("#platformF").hide();
+    $("#platformV").hide();
+    $("#platformS").hide();
+});
+$("#p4").click(function(){
+    $("#platformH").hide();
+    $("#platformO").hide();
+    $("#platformT").hide();
+    $("#platformF").show();
+    $("#platformV").hide();
+    $("#platformS").hide();
+});
+$("#p5").click(function(){
+    $("#platformH").hide();
+    $("#platformO").hide();
+    $("#platformT").hide();
+    $("#platformF").hide();
+    $("#platformV").show();
+    $("#platformS").hide();
+});
+$("#p6").click(function(){
+    $("#platformH").hide();
+    $("#platformO").hide();
+    $("#platformT").hide();
+    $("#platformF").hide();
+    $("#platformV").hide();
+    $("#platformS").show();
+});
+$("#textSave").click(function(){
+    var y = document.getElementById("text").value;
+    document.getElementById("savedText").innerHTML = y;
+    $("#textFinal").show();
+    $("#textUser").hide();
+});
+$("#textSaveT").click(function(){
+    var y = document.getElementById("textT").value;
+    document.getElementById("savedTextT").innerHTML = y;
+    $("#textFinalT").show();
+    $("#textUserT").hide();
+});
+$("#textSaveH").click(function(){
+    var y = document.getElementById("textH").value;
+    document.getElementById("savedTextH").innerHTML = y;
+    $("#textFinalH").show();
+    $("#textUserH").hide();
+});
+$("#textSaveF").click(function(){
+    var y = document.getElementById("textF").value;
+    document.getElementById("savedTextF").innerHTML = y;
+    $("#textFinalF").show();
+    $("#textUserF").hide();
+});
+$("#textSaveV").click(function(){
+    var y = document.getElementById("textV").value;
+    document.getElementById("savedTextV").innerHTML = y;
+    $("#textFinalV").show();
+    $("#textUserV").hide();
+});
+$("#textSaveS").click(function(){
+    var y = document.getElementById("textS").value;
+    document.getElementById("savedTextS").innerHTML = y;
+    $("#textFinalS").show();
+    $("#textUserS").hide();
+});
+$('#btnCancel').click(function() {
+  window.location='index.html';
+});
+$('#myModal').on('shown.bs.modal', function () {
+    $('#myInput').focus()
+})
+$(window).on('load',function(){
+        $('#myModal').modal('show');
+});
+function save() {
+var t = document.getElementById("titleUser").value;
+document.getElementById("titleO").innerHTML = t;
+document.getElementById("titleT").innerHTML = t;
+document.getElementById("titleH").innerHTML = t;
+document.getElementById("titleF").innerHTML = t;
+document.getElementById("titleV").innerHTML = t;
+document.getElementById("titleS").innerHTML = t;
+
+var fon = document.getElementById("font").value;
+
+var co = document.getElementById("colorOne").value;
+var ct = document.getElementById("colorTwo").value;
+var ch = document.getElementById("colorThree").value;
+var cf = document.getElementById("colorFour").value;
+console.log(co);
+document.body.style.background = co;
+$('.header').css('background-color',co);
+$('.content').css('background-color',ct);
+$('.space').css('background-color',ch);
+$('.info').css('background-color',ct);
+$('.spacealt').css('background-color',co);
+$('.headTitle').css('color',cf);
+$('.headTitle').css('font-family',fon);
+}
+</script>
+</body>
+</html>

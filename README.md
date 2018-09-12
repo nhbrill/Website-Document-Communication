@@ -1,2 +1,2 @@
-# Website-Document-Communication
-A website designer using HTML, JavaScript, jQuery, and Bootstrap. 
+# Web-o-matic
+A website designer using HTML, JavaScript, and Bootstrap. 
